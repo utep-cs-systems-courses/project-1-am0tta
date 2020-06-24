@@ -15,7 +15,7 @@ int space_char(char c){
 //true if c is not a tab or space, and not zero
 int non_space_char(char c){
 
-  if (c >= 34 && c <= 126)
+  if (c != '\t' && c != ' ')
     return 1;
 
   else
@@ -24,16 +24,29 @@ int non_space_char(char c){
 }
 
 // * to first (non-space) char in first word in s
-char word_start(char *str){
+char *word_start(char *str){
+  
+  while(*str){
+    
+    if(non_space_char(*str))
+      return str;
+    
+    *str++;
+  }
+  return 0;
 
 }
 
 // * to char after end of word
 char *word_terminator(char *word){
+
+  
 }
 
 // the number of words in s
 int count_words(char *str){
+
+  
 }
 
 char *copy_str(char *inStr, short len){
