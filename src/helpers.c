@@ -41,6 +41,16 @@ char *word_start(char *str){
 char *word_terminator(char *word){
 
   
+  while(*word){
+
+    if(space_char(*word))
+      return word;
+
+    else
+      *word++;
+    
+  }
+  return 0;
 }
 
 // the number of words in s
