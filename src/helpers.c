@@ -23,10 +23,10 @@ int non_space_char(char c){
   
 }
 
-// * to first (non-space) char in first word in s
+// * to first (non-space) char in first word in str
 char *word_start(char *str){
   
-  while(*str){
+  while(*str){           //while something is here
     
     if(non_space_char(*str))
       return str;
@@ -40,23 +40,37 @@ char *word_start(char *str){
 // * to char after end of word
 char *word_terminator(char *word){
 
-  
-  while(*word){
+  while(*word){           //while something is here
 
     if(space_char(*word))
       return word;
 
-    else
+    else if(non_space_char(*word))
       *word++;
     
   }
   return 0;
 }
 
-// the number of words in s
+// the number of words in str
 int count_words(char *str){
 
-  
+  int num_words = 0;
+  int position = 0;
+
+  while(*str){
+    if(non_space_char(*str) && position == 0){
+
+      position = 1;
+      num_words++;
+    }
+    else if(space_char(*str) && position == 1)
+     position = 0;
+ 
+    *str++;
+    
+  }
+  return num_words;
 }
 
 char *copy_str(char *inStr, short len){
