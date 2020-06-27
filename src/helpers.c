@@ -1,10 +1,10 @@
 #include "malloc.h"
 #include "tokenizer.h"
 
-//true if c is a tab or space, and not zero
+// True if c is a tab or space, and not zero
 int space_char(char c){
 
-  if (c == '\t' || c == ' ')
+  if(c == '\t' || c == ' ')
     return 1;
 
   else
@@ -12,10 +12,10 @@ int space_char(char c){
 
 }
 
-//true if c is not a tab or space, and not zero
+// True if c is not a tab or space, and not zero
 int non_space_char(char c){
 
-  if (c != '\t' && c != ' ')
+  if(c != '\t' && c != ' ')
     return 1;
 
   else
@@ -52,7 +52,7 @@ char *word_terminator(char *word){
   return 0;
 }
 
-// the number of words in str
+// The number of words in str
 int count_words(char *str){
 
   int num_words = 0;
@@ -64,6 +64,7 @@ int count_words(char *str){
       position = 1;
       num_words++;
     }
+    
     else if(space_char(*str) && position == 1)
      position = 0;
  
@@ -73,7 +74,17 @@ int count_words(char *str){
   return num_words;
 }
 
+// Allocates some space for the words it copies
 char *copy_str(char *inStr, short len){
+
+  char * pointer = malloc(len + 1); //must allocate extra space for zero('\0') terminator
+  
+  int i;
+  for(i = 0; i <= len; i++)
+    pointer[i] = inStr[i]; // copies character into new string
+
+  return pointer;  
+  
 }
 
 void print_tokens(char **tokens){
