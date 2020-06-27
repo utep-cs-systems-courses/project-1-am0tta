@@ -87,8 +87,18 @@ char *copy_str(char *inStr, short len){
   
 }
 
+// All tokens will be printed
 void print_tokens(char **tokens){
+
+  while(*tokens){
+
+    printf("%s\n", tokens[i]);
+    tokens++;
+    
+  }
+  
 }
 
+// Frees all tokens
 void free_tokens(char **tokens){
 }
