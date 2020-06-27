@@ -83,13 +83,14 @@ char *copy_str(char *inStr, short len){
   for(i = 0; i <= len; i++)
     pointer[i] = inStr[i]; // copies character into new string
 
+  pointer[len] = '\0'; // breaking zero
   return pointer;  
   
 }
 
 // All tokens will be printed
 void print_tokens(char **tokens){
-
+  int i = 0;
   while(*tokens){
 
     printf("%s\n", tokens[i]);
@@ -108,5 +109,6 @@ void free_tokens(char **tokens){
     tokens++;
 
   }
+  free(tokens);
   
 }
