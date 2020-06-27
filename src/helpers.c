@@ -99,6 +99,14 @@ void print_tokens(char **tokens){
   
 }
 
-// Frees all tokens
+// Frees all tokens and uses free() to release memory
 void free_tokens(char **tokens){
+
+  while(*tokens){
+
+    free(*tokens);
+    tokens++;
+
+  }
+  
 }
