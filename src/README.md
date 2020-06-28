@@ -1,12 +1,10 @@
 Project 1: Tokenizer
 ====================
-# Instructions:
+## Overview:
+The objective is to build a tokenizer that maintains a history, by allowing
+the user to view and recall a certain history item by using a command.
 
-You should document your tokenizer in this file.
+## How to Use the Program:
+To use the program, simply type any kind of string when prompted to. You can
+exit the program at any time by typing '0'. 
 
-This file is written in the refreshingly simple `markdown` text
-formatting language.
-
-To learn about text formatting using markdown, we encourage you to examine 
- - [../README.md](../README.md)
- - the online [Markdown Guide](https://www.markdownguide.org/).
