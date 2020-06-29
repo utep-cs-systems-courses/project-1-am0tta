@@ -110,7 +110,7 @@ void free_tokens(char **tokens){
     tokens++;
 
   }
-  free(tokens);
+  free(*tokens);
   
 }
 
@@ -118,23 +118,26 @@ void free_tokens(char **tokens){
    space-separated tokens from zero terminated str. */
 char **tokenize(char *str){
 
-  
-  char *original = str;                 // pointer to keep an eye on the provided string
-  int words = count_words(string);
+  int i;
+  //char *original = str;                 // pointer to keep an eye on the provided string
+  int words = count_words(str);
   char **tokens = malloc (sizeof(char *) *(words + 1));
   char *final = word_terminator(str);         //pointer at the end
 
-  for(int i = 0; i < words; i++){
+  for(i = 0; i < words-1; i++){
 
-    if(i > 0)
-      original = words_start(words);
+    str = word_start(str);
+    //original = word_start(original);
+    //final = word_terminator(original);
     
-    x = word_terminator(str) - str;
-    toekns = copi_st(str,x);
+    
+    int length = word_terminator(str) - str;    // lenght difference
+    tokens[i] = copy_str(str,length);
 
-    str = word_terminator(str);
+    str = word_terminator(str);                // points to available next word
 
   }
+
   tokens[i] = '\0';
   return tokens;
   
