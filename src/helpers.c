@@ -92,10 +92,14 @@ char *copy_str(char *inStr, short len){
 void print_tokens(char **tokens){
   
   int i = 0;
+  int num = 0;
   while(*tokens){
 
+    printf("Token %d\n", num);
     printf("%s\n", tokens[i]);
+    printf("\n");
     tokens++;
+    num++;
     
   }
   
