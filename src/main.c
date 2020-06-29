@@ -37,11 +37,21 @@ int main(){
   
   // testing count_words
   int words = count_words(user_input);
-  printf("The number of words is: %d\n", words); 
+  printf("The number of words is: %d\n", words);
+  printf("\n");
+  
+  // testing print_tokens
+  char **tokens = tokenize(user_input);
+  printf("Here are the tokens: \n");
+  print_tokens(tokens);
+
+  // free tokens
+  free_tokens(tokens);
   
   // The program keeps going until the user types 0
-  if(user_input[0]!= '0')
+  if(user_input[0]!= '0'){
     int keepUp = main();
+  }
   
   return 0;
 }
