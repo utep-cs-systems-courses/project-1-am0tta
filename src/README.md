@@ -5,7 +5,7 @@ The objective is to build a tokenizer that maintains a history, by allowing
 the user to view and recall a certain history item by using a command.
 
 ## How to Use the Program:
-To compile the program type 'make all' and to run it type './exec'. To use it type
+To compile the program type **make all** and to run it type **./exec**. To use it type
 a string, then hit enter. You will be then shown results related to milestones
 1 - 4. If you want to exit the program, type '0'.
 
