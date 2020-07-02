@@ -6,6 +6,8 @@
 
 void initiate_input(char c);
 int main(){
+
+  //List *hist = init_history();
   
   // Building a simple UI with fgets()
   char user_input[100];
@@ -14,7 +16,6 @@ int main(){
   printf("Enter your sentence. When you are ready to quit simply type 0.\n");
   printf("< ");
   fgets(user_input, MAX, stdin);
-
   
   // exit() function to end the program
   if(user_input[0] == '0'){
@@ -26,6 +27,12 @@ int main(){
   }
   
   printf("%s\n", user_input);
+
+  // if(user_input[0] == '1'){
+
+  // add_history(hist, user_input);
+    
+  // }
 
   // testing word_start
   char *p = word_start(user_input);
@@ -52,6 +59,9 @@ int main(){
   if(user_input[0]!= '0'){
     int keepUp = main();
   }
+
+  //print_history(hist);
+  //free_history(hist);
   
   return 0;
 }
